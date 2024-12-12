@@ -152,14 +152,14 @@ def plot_heatmap(bs_model, spot_range, vol_range, strike_price):
     
     # Plotting Call Price Heatmap
     fig_call, ax_call = plt.subplots(figsize=(10, 8))
-    sns.heatmap(call_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_call)
+    sns.heatmap(call_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_call)
     ax_call.set_title('CALL')
     ax_call.set_xlabel('Spot Price')
     ax_call.set_ylabel('Volatility')
     
     # Plotting Put Price Heatmap
     fig_put, ax_put = plt.subplots(figsize=(10, 8))
-    sns.heatmap(put_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="viridis", ax=ax_put)
+    sns.heatmap(put_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2), annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_put)
     ax_put.set_title('PUT')
     ax_put.set_xlabel('Spot Price')
     ax_put.set_ylabel('Volatility')
