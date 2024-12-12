@@ -68,15 +68,13 @@ class BlackScholes:
         strike_price: float,
         time_to_maturity: float,
         risk_free_rate: float,
-        volatility: float,
-        purchase_price: float
+        volatility: float
     ):
         self.current_price = current_price
         self.strike_price = strike_price
         self.time_to_maturity = time_to_maturity
         self.risk_free_rate = risk_free_rate
         self.volatility = volatility
-        self.purchase_price = purchase_price
 
     def calculate_prices(
         self,
@@ -85,8 +83,7 @@ class BlackScholes:
         strike_price = self.strike_price
         time_to_maturity = self.time_to_maturity
         risk_free_rate = self.risk_free_rate
-        volatility = self.volatility,
-        purchase_price = self.purchase_price
+        volatility = self.volatility
 
         d1 = (log(current_price/strike_price) + (risk_free_rate + 0.5 * volatility**2)*time_to_maturity) / (volatility * sqrt(time_to_maturity))
         d2 = d1 - (volatility * sqrt(time_to_maturity))
@@ -107,6 +104,10 @@ class BlackScholes:
 
         return call_price, put_price
 
+# Function to generate heatmaps
+# ... your existing imports and BlackScholes class definition ...
+
+
 # Sidebar for User Inputs
 with st.sidebar:
     st.title("📊 Black-Scholes Option Pricing Model")
@@ -119,7 +120,6 @@ with st.sidebar:
     time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
     risk_free_rate = st.number_input("Risk-Free Rate", value=0.05)
     volatility = st.number_input("Volatility (σ)", value=0.2)
-    purchase_price = st.number_input("Purchase Price", value=5.0)
 
     st.markdown("---")
     calculate_btn = st.button('Heatmap Parameters')
@@ -133,7 +133,7 @@ with st.sidebar:
 
 
 
-def plot_heatmap(bs_model, spot_range, vol_range, strike_price, purchase_price):
+def plot_heatmap(bs_model, spot_range, vol_range, strike_price):
     call_prices = np.zeros((len(vol_range), len(spot_range)))
     put_prices = np.zeros((len(vol_range), len(spot_range)))
     
@@ -147,8 +147,8 @@ def plot_heatmap(bs_model, spot_range, vol_range, strike_price, purchase_price):
                 volatility=vol,
             )
             bs_temp.calculate_prices()
-            call_prices[i, j] = bs_temp.call_price - purchase_price
-            put_prices[i, j] = bs_temp.put_price - purchase_price
+            call_prices[i, j] = bs_temp.call_price
+            put_prices[i, j] = bs_temp.put_price
     
     # Plotting Call Price Heatmap
     fig_call, ax_call = plt.subplots(figsize=(10, 8))
@@ -176,14 +176,13 @@ input_data = {
     "Strike Price": [strike_price],
     "Time to Maturity (Years)": [time_to_maturity],
     "Risk-Free Rate": [risk_free_rate],
-    "Volatility (σ)": [volatility],
-    "Purchase Price": [purchase_price]
+    "Volatility (σ)": [volatility]
 }
 input_df = pd.DataFrame(input_data)
 st.table(input_df)
 
 # Calculate Call and Put values
-bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free_rate, volatility, purchase_price)
+bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free_rate, volatility)
 call_price, put_price = bs_model.calculate_prices()
 
 # Display Call and Put Values in colored tables
@@ -212,26 +211,18 @@ with col2:
     """, unsafe_allow_html=True)
 
 st.markdown("")
-st.title("Interactive Heatmap Modelling Option Prices")
+st.title("Interactive Heatmap Modelling Options Prices")
 st.info("Visualize the fluctuation of option prices by varying the 5 inputs of the Black-Scholes Model.")
 
 # Interactive Sliders and Heatmaps for Call and Put Options
 col1, col2 = st.columns([1,1], gap="small")
 
 with col1:
-    st.subheader("Call Option Price Heatmap")
-    heatmap_fig_call_price, _ = plot_heatmap(bs_model, spot_range, vol_range, strike_price, 0)
-    st.pyplot(heatmap_fig_call_price)
-    
-    st.subheader("Call Option P&L Heatmap")
-    heatmap_fig_call_pnl, _ = plot_heatmap(bs_model, spot_range, vol_range, strike_price, 0)
-    st.pyplot(heatmap_fig_call_pnl)
+    st.subheader("Call Price Heatmap")
+    heatmap_fig_call, _ = plot_heatmap(bs_model, spot_range, vol_range, strike_price)
+    st.pyplot(heatmap_fig_call)
 
 with col2:
-    st.subheader("Put Option Price Heatmap")
-    _, heatmap_fig_put_price = plot_heatmap(bs_model, spot_range, vol_range, strike_price, purchase_price)
-    st.pyplot(heatmap_fig_put_price)
-
-    st.subheader("Put Option P&L Heatmap")
-    _, heatmap_fig_put_pnl = plot_heatmap(bs_model, spot_range, vol_range, strike_price, purchase_price)
-    st.pyplot(heatmap_fig_put_pnl)
+    st.subheader("Put Price Heatmap")
+    _, heatmap_fig_put = plot_heatmap(bs_model, spot_range, vol_range, strike_price)
+    st.pyplot(heatmap_fig_put)
