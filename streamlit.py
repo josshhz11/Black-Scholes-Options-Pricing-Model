@@ -211,8 +211,8 @@ with col2:
     """, unsafe_allow_html=True)
 
 st.markdown("")
-st.title("Options Price - Interactive Heatmap")
-st.info("Explore how option prices fluctuate with varying 'Spot Prices and Volatility' levels using interactive heatmap parameters, all while maintaining a constant 'Strike Price'.")
+st.title("Interactive Heatmap Modelling Options Prices")
+st.info("Visualize the fluctuation of option prices by varying the 5 inputs of the Black-Scholes Model.")
 
 # Interactive Sliders and Heatmaps for Call and Put Options
 col1, col2 = st.columns([1,1], gap="small")
