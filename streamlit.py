@@ -143,8 +143,8 @@ def plot_heatmap(bs_model, spot_range, vol_range, strike_price):
                 current_price=spot,
                 strike_price=strike_price,
                 time_to_maturity=bs_model.time_to_maturity,
+                risk_free_rate=bs_model.risk_free_rate,
                 volatility=vol,
-                risk_free_rate=bs_model.risk_free_rate
             )
             bs_temp.calculate_prices()
             call_prices[i, j] = bs_temp.call_price
