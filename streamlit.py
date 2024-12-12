@@ -176,13 +176,14 @@ input_data = {
     "Strike Price": [strike_price],
     "Time to Maturity (Years)": [time_to_maturity],
     "Risk-Free Rate": [risk_free_rate],
-    "Volatility (σ)": [volatility]
+    "Volatility (σ)": [volatility],
+    "Purchase Price": [purchase_price]
 }
 input_df = pd.DataFrame(input_data)
 st.table(input_df)
 
 # Calculate Call and Put values
-bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free_rate, volatility)
+bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free_rate, volatility, purchase_price)
 call_price, put_price = bs_model.calculate_prices()
 
 # Display Call and Put Values in colored tables
