@@ -29,7 +29,7 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
 # Main Page for Output Display
-st.markdown('<p> class="dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
+st.markdown('<p class="dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
 current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
 
 # Sidebar Inputs
@@ -74,7 +74,7 @@ with rf_rate_col:
     st.markdown(f'<p class="param_value">{risk_free_rate:.2%}</p>', unsafe_allow_html=True)
 
 with vol_col:
-    st.markdown('<p class="param_text">Volatility</p>', unsafe_allow_html=True)
+    st.markdown('<p class="param_text">Volatility (σ)</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="param_value">{volatility:.2%}</p>', unsafe_allow_html=True)
 
 with purchase_price_col:
@@ -164,19 +164,6 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     ax_put_pnl.set_ylabel('Volatility')
     
     return fig_call, fig_put, fig_call_pnl, fig_put_pnl
-
-
-# Table of Inputs
-input_data = {
-    "Current Asset Price": [current_price],
-    "Strike Price": [strike_price],
-    "Time to Maturity (Years)": [time_to_maturity],
-    "Risk-Free Rate": [risk_free_rate],
-    "Volatility (σ)": [volatility],
-    "Purchase Price": [purchase_price]
-}
-input_df = pd.DataFrame(input_data)
-st.table(input_df)
 
 # Calculate Call and Put values
 bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free_rate, volatility)
