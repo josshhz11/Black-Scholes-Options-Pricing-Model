@@ -34,7 +34,7 @@ current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_pri
 
 # Sidebar Inputs
 with st.sidebar:
-    st.title("📈 Black-Scholes Option Pricing Model")
+    st.title("📈 Black-Scholes Options Pricing Model")
     st.write("`Created by:`")
     linkedin_url = "https://www.linkedin.com/in/joshua-foo-tse-ern/"
     st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Joshua Foo Tse Ern`</a>', unsafe_allow_html=True)
