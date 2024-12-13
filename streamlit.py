@@ -15,102 +15,27 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
-
 # Custom CSS to inject into Streamlit
-st.markdown("""
-<style>
-/* Adjust the size and alignment of the CALL and PUT value containers */
-.metric-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px; /* Adjust the padding to control height */
-    width: auto; /* Auto width for responsiveness, or set a fixed width if necessary */
-    margin: 0 auto; /* Center the container */
-}
+st.markdown(
+    """
+    <style>
+        footer {display: none}
+        [data-testid="stHeader"] {display: none}
+    </style>
+    """, unsafe_allow_html = True
+)
 
-/* Custom classes for CALL and PUT values */
-.metric-call {
-    background-color: #90ee90; /* Light green background */
-    color: black; /* Black font color */
-    margin-right: 10px; /* Spacing between CALL and PUT */
-    border-radius: 10px; /* Rounded corners */
-}
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-.metric-put {
-    background-color: #ffcccb; /* Light red background */
-    color: black; /* Black font color */
-    border-radius: 10px; /* Rounded corners */
-}
+title_col, emp_col, current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,0.2,1,1,1,1,1,1])
 
-/* Style for the value text */
-.metric-value {
-    font-size: 1.5rem; /* Adjust font size */
-    font-weight: bold;
-    margin: 0; /* Remove default margins */
-}
+with title_col:
+    st.markdown('<p class="dashboard_title">Black-Scholes<br>Options Pricing Model</p>', unsafe_allow_html = True)
 
-/* Style for the label text */
-.metric-label {
-    font-size: 1rem; /* Adjust font size */
-    margin-bottom: 4px; /* Spacing between label and value */
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-# (Include the BlackScholes class definition here)
-
-class BlackScholes:
-    def __init__(
-        self,
-        current_price: float,
-        strike_price: float,
-        time_to_maturity: float,
-        risk_free_rate: float,
-        volatility: float
-    ):
-        self.current_price = current_price
-        self.strike_price = strike_price
-        self.time_to_maturity = time_to_maturity
-        self.risk_free_rate = risk_free_rate
-        self.volatility = volatility
-
-    def calculate_prices(
-        self,
-    ):
-        current_price = self.current_price
-        strike_price = self.strike_price
-        time_to_maturity = self.time_to_maturity
-        risk_free_rate = self.risk_free_rate
-        volatility = self.volatility
-
-        d1 = (log(current_price/strike_price) + (risk_free_rate + 0.5 * volatility**2)*time_to_maturity) / (volatility * sqrt(time_to_maturity))
-        d2 = d1 - (volatility * sqrt(time_to_maturity))
-
-        call_price = (current_price * norm.cdf(d1)) - (strike_price * exp(-risk_free_rate * time_to_maturity) * norm.cdf(d2))
-        put_price = (strike_price * exp(-risk_free_rate * time_to_maturity) * norm.cdf(-d2)) - (current_price * norm.cdf(-d1))
-
-        self.call_price = call_price
-        self.put_price = put_price
-
-        # Greeks: Delta
-        self.call_delta = norm.cdf(d1)
-        self.put_delta = 1 - norm.cdf(d1)
-
-        # Greeks: Gamma
-        self.call_gamma = norm.pdf(d1) / (strike_price * volatility * sqrt(time_to_maturity))
-        self.put_gamma = self.call_gamma
-
-        return call_price, put_price
-
-# Function to generate heatmaps
-# ... your existing imports and BlackScholes class definition ...
-
-
-# Sidebar for User Inputs
+# Sidebar Inputs
 with st.sidebar:
-    st.title("📊 Black-Scholes Option Pricing Model")
+    st.title("📈 Black-Scholes Option Pricing Model")
     st.write("`Created by:`")
     linkedin_url = "https://www.linkedin.com/in/joshua-foo-tse-ern/"
     st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Joshua Foo Tse Ern`</a>', unsafe_allow_html=True)
@@ -132,7 +57,59 @@ with st.sidebar:
     spot_range = np.linspace(spot_min, spot_max, 10)
     vol_range = np.linspace(vol_min, vol_max, 10)
 
+# Display Parameter Values
+with current_price_col:
+    st.markdown('<p class="param_text">Current Price</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">${current_price:.2f}</p>', unsafe_allow_html=True)
 
+with strike_price_col:
+    st.markdown('<p class="param_text">Strike Price</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">${strike_price:.2f}</p>', unsafe_allow_html=True)
+
+with ttm_col:
+    st.markdown('<p class="param_text">Time to Maturity</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">{time_to_maturity:.2f} yrs</p>', unsafe_allow_html=True)
+
+with rf_rate_col:
+    st.markdown('<p class="param_text">Risk-Free Rate</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">{risk_free_rate:.2%}</p>', unsafe_allow_html=True)
+
+with vol_col:
+    st.markdown('<p class="param_text">Volatility</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">{volatility:.2%}</p>', unsafe_allow_html=True)
+
+with purchase_price_col:
+    st.markdown('<p class="param_text">Purchase Price</p>', unsafe_allow_html=True)
+    st.markdown(f'<p class="param_value">${purchase_price:.2f}</p>', unsafe_allow_html=True)
+
+
+class BlackScholes:
+    def __init__(self, current_price, strike_price, time_to_maturity, risk_free_rate, volatility):
+        self.current_price = current_price
+        self.strike_price = strike_price
+        self.time_to_maturity = time_to_maturity
+        self.risk_free_rate = risk_free_rate
+        self.volatility = volatility
+
+    def calculate_prices(self):
+        d1 = (log(self.current_price/self.strike_price) + (self.risk_free_rate + 0.5 * self.volatility**2)*self.time_to_maturity) / (self.volatility * sqrt(self.time_to_maturity))
+        d2 = d1 - (self.volatility * sqrt(self.time_to_maturity))
+
+        call_price = (self.current_price * norm.cdf(d1)) - (self.strike_price * exp(-self.risk_free_rate * self.time_to_maturity) * norm.cdf(d2))
+        put_price = (self.strike_price * exp(-self.risk_free_rate * self.time_to_maturity) * norm.cdf(-d2)) - (self.current_price * norm.cdf(-d1))
+
+        self.call_price = call_price
+        self.put_price = put_price
+
+        # Greeks: Delta
+        self.call_delta = norm.cdf(d1)
+        self.put_delta = 1 - norm.cdf(d1)
+
+        # Greeks: Gamma
+        self.call_gamma = norm.pdf(d1) / (strike_price * volatility * sqrt(time_to_maturity))
+        self.put_gamma = self.call_gamma
+
+        return call_price, put_price
 
 def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchase_price):
     call_prices = np.zeros((len(vol_range), len(spot_range)))

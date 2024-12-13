@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Space Grotesk';
+}
+
+div.block-container.css-z5fcl4.egzxvld4 {
+    width: 100%;
+    min-width: auto;
+    max-width: initial;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+.dashboard_title {
+    font-size: 35px; 
+    font-family: 'Space Grotesk';
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    padding-bottom: 35px;
+}
+
+[data-testid="stVerticalBlock"] > [style*="flex-direction: column;"] > [data-testid="stVerticalBlock"] {
+    border: 1px groove #52546a;
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: -6px 8px 20px 1px #00000052;
+}
