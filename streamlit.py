@@ -11,7 +11,7 @@ import seaborn as sns
 # Page configuration
 st.set_page_config(
     page_title="Black-Scholes Option Pricing Model",
-    page_icon="📊",
+    page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded")
 
