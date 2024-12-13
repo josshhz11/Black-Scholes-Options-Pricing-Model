@@ -10,7 +10,7 @@ import seaborn as sns
 #######################
 # Page configuration
 st.set_page_config(
-    page_title="Black-Scholes Option Pricing Model",
+    page_title="Black-Scholes Options Pricing Model",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -28,10 +28,10 @@ st.markdown(
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
-title_col, emp_col, current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,0.2,1,1,1,1,1,1])
+# Main Page for Output Display
+st.title('<p class="dashboard_title">Black-Scholes Options Pricing Model')
 
-with title_col:
-    st.markdown('<p class="dashboard_title">Black-Scholes<br>Options Pricing Model</p>', unsafe_allow_html = True)
+current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
 
 # Sidebar Inputs
 with st.sidebar:
@@ -166,9 +166,6 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     
     return fig_call, fig_put, fig_call_pnl, fig_put_pnl
 
-
-# Main Page for Output Display
-st.title("Black-Scholes Options Pricing Model")
 
 # Table of Inputs
 input_data = {
