@@ -15,12 +15,13 @@ div.block-container.css-z5fcl4.egzxvld4 {
 }
 
 .dashboard_title {
-    font-size: 35px; 
+    font-size: 70px; 
     font-family: 'Space Grotesk';
     font-weight: 700;
     line-height: 1.2;
     text-align: left;
     padding-bottom: 35px;
+    align-content: center;
 }
 
 [data-testid="stVerticalBlock"] > [style*="flex-direction: column;"] > [data-testid="stVerticalBlock"] {

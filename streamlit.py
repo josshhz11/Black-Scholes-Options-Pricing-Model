@@ -29,7 +29,7 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 
 # Main Page for Output Display
-st.markdown('<h1 class="dashboard_title">Black-Scholes<br>Options Pricing Model</h1>', unsafe_allow_html = True)
+st.markdown('<p> class="dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
 current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
 
 # Sidebar Inputs
