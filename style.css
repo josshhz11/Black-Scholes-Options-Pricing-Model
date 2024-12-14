@@ -2,7 +2,17 @@
 
 html, body, [class*="css"] {
     font-family: 'Space Grotesk';
-    background-color: black;
+}
+
+body {
+    background-color: black !important;
+    color: white !important; /* Optional: Sets the text color to white for readability */
+}
+
+/* Adjust the block container background and borders */
+div.block-container {
+    background-color: black !important;
+    border: none !important;
 }
 
 div.block-container.css-z5fcl4.egzxvld4 {
