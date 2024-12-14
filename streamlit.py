@@ -196,24 +196,20 @@ call_price, put_price = bs_model.calculate_prices()
 col1, col2 = st.columns([1,1], gap="small")
 
 with col1:
-    st.markdown(f"""
-        <div class="metric-container metric-call">
-            <div>
-                <p class="current_price_text">Call Option Value</div>
-                <p class="price_details">${call_price:.2f}</div>
-            </div>
+    st.markdown("""
+        <div class="bs_param_container">
+            <p class="strike_price_text">Call Option Value</div>
+            <p class="price_details">${:.2f}</div>
         </div>
-    """, unsafe_allow_html=True)
+    """.format(call_price), unsafe_allow_html=True)
 
 with col2:
-    st.markdown(f"""
-        <div class="metric-container metric-put">
-            <div>
-                <p class="strike_price_text">Put Option Value</div>
-                <p class="price_details">${put_price:.2f}</div>
-            </div>
+    st.markdown("""
+        <div class="bs_param_container">
+            <p class="strike_price_text">Put Option Value</div>
+            <p class="price_details">${:.2f}</div>
         </div>
-    """, unsafe_allow_html=True)
+    """.format(put_price), unsafe_allow_html=True)
 
 st.markdown("")
 st.title("Interactive Heatmaps for Option Prices and P&L")
