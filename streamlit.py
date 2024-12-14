@@ -30,11 +30,10 @@ with open('style.css') as f:
 
 # Main Page for Output Display
 st.markdown('<p class="bs_dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
-current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
 
-# Sidebar Inputs with Form-based Layout
-with st.sidebar:
-    # Sidebar Title
+params_col, data_col = st.columns([0.5,1.2])
+
+with params_col:
     st.markdown('<p class="sidebar_title">Option Pricing Parameters</p>', unsafe_allow_html=True)
 
     # Create a form for parameter inputs
@@ -69,6 +68,9 @@ with st.sidebar:
     # Define spot and volatility ranges based on inputs
     spot_range = np.linspace(spot_min, spot_max, 10)
     vol_range = np.linspace(vol_min, vol_max, 10)
+
+with data_col:
+    current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
 
 # Display Parameter Values
 with current_price_col:
