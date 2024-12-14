@@ -53,7 +53,7 @@ div.block-container.css-z5fcl4.egzxvld4 {
 }
 
 .price_details {
-    font-size: 30px; 
+    font-size: 50px; 
     font-family: 'Space Grotesk';
     color: #f6f6f6;
     font-weight: 900;
@@ -148,7 +148,7 @@ div.block-container.css-z5fcl4.egzxvld4 {
 }
 
 .call_option_price, .put_option_price {
-    font-size: 40px; /* Larger font for the price */
+    font-size: 60px; /* Larger font for the price */
     font-family: 'Space Grotesk';
     color: #f6f6f6;
     font-weight: 900;
