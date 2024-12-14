@@ -58,29 +58,52 @@ with st.sidebar:
 
 # Display Parameter Values
 with current_price_col:
-    with st.container():
-        st.markdown(f'<p class="current_price_text">Current Price<br></p><p class="price_details">${current_price:.2f}</p>', unsafe_allow_html = True)
-
+    st.markdown("""
+        <div class="param_container">
+            <p class="current_price_text">Current Price</p>
+            <p class="price_details">${:.2f}</p>
+        </div>
+    """.format(current_price), unsafe_allow_html=True)
+    
 with strike_price_col:
-    with st.container():
-        st.markdown(f'<p class="strike_price_text">Strike Price<br></p><p class="price_details">${strike_price:.2f}</p>', unsafe_allow_html = True)
+    st.markdown("""
+        <div class="param_container">
+            <p class="strike_price_text">Strike Price</p>
+            <p class="price_details">${:.2f}</p>
+        </div>
+    """.format(strike_price), unsafe_allow_html=True)
 
 with ttm_col:
-    with st.container():
-        st.markdown(f'<p class="time_to_maturity_text">Time to Maturity<br></p><p class="price_details">{time_to_maturity:.2f} yrs</p>', unsafe_allow_html = True)
+    st.markdown("""
+        <div class="param_container">
+            <p class="time_to_maturity_text">Time to Maturity</p>
+            <p class="price_details">{:.2f} yrs</p>
+        </div>
+    """.format(time_to_maturity), unsafe_allow_html=True)
 
 with rf_rate_col:
-    with st.container():
-        st.markdown(f'<p class="rf_rate_text">Risk-Free Rate<br></p><p class="price_details">{risk_free_rate:.2%}</p>', unsafe_allow_html = True)
+    st.markdown("""
+        <div class="param_container">
+            <p class="rf_rate_text">Risk-Free Rate</p>
+            <p class="price_details">{:.2%}</p>
+        </div>
+    """.format(risk_free_rate), unsafe_allow_html=True)
 
 with vol_col:
-    with st.container():
-        st.markdown(f'<p class="vol_text">Volatility (σ)<br></p><p class="price_details">{volatility:.2%}</p>', unsafe_allow_html = True)
+    st.markdown("""
+        <div class="param_container">
+            <p class="vol_text">Volatility (σ)</p>
+            <p class="price_details">{:.2%}</p>
+        </div>
+    """.format(volatility), unsafe_allow_html=True)
 
 with purchase_price_col:
-    with st.container():
-        st.markdown(f'<p class="purchase_price_text">Purchase Price<br></p><p class="price_details">${purchase_price:.2f}</p>', unsafe_allow_html = True)
-
+    st.markdown("""
+        <div class="param_container">
+            <p class="purchase_price_text">Purchase Price</p>
+            <p class="price_details">${:.2f}</p>
+        </div>
+    """.format(purchase_price), unsafe_allow_html=True)
 
 class BlackScholes:
     def __init__(self, current_price, strike_price, time_to_maturity, risk_free_rate, volatility):
