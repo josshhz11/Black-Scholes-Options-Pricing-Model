@@ -31,22 +31,20 @@ div.block-container.css-z5fcl4.egzxvld4 {
     color: white;
 }
 
-/* Style for rounded rectangles around each column */
 .param_container {
-    border: 2px solid #52546a; /* Border color */
-    border-radius: 15px; /* Rounded corners */
-    background-color: #1a1a1a; /* Dark gray background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-    padding: 15px; /* Inner spacing */
-    margin: 10px; /* Outer spacing between columns */
-    text-align: center; /* Center text inside the container */
-    color: white; /* Default text color for content inside */
+    border: 2px solid #52546a !important; /* Border color */
+    border-radius: 15px !important; /* Rounded corners */
+    background-color: #1a1a1a !important; /* Dark gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important; /* Subtle shadow */
+    padding: 15px !important; /* Inner spacing */
+    margin: 10px !important; /* Outer spacing between columns */
+    text-align: center !important; /* Center text inside the container */
+    color: white !important; /* Default text color for content inside */
 }
 
-/* Adjust text within each column */
 .param_container p {
-    margin: 0; /* Remove default paragraph margins */
-    padding: 5px 0; /* Consistent padding for inner content */
+    margin: 0 !important; /* Remove default paragraph margins */
+    padding: 5px 0 !important; /* Consistent padding for inner content */
 }
 
 .price_details {
