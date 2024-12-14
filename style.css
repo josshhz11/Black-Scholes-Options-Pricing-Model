@@ -31,15 +31,6 @@ div.block-container.css-z5fcl4.egzxvld4 {
     color: white;
 }
 
-[data-testid="stVerticalBlock"] > [style*="flex-direction: column;"] > [data-testid="stVerticalBlock"] {
-    border: 1px groove #52546a;
-    border-radius: 10px;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: -6px 8px 20px 1px #00000052;
-}
-
 /* Style for rounded rectangles around each column */
 .param_container {
     border: 2px solid #52546a; /* Border color */
