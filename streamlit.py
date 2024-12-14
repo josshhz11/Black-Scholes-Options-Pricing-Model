@@ -197,17 +197,17 @@ col1, col2 = st.columns([1,1], gap="small")
 
 with col1:
     st.markdown("""
-        <div class="bs_param_container">
-            <p class="strike_price_text">Call Option Value</p>
-            <p class="price_details">${:.2f}</p>
+        <div class="call_option_value">
+            <p class="call_option_text">Call Option Value</p>
+            <p class="call_option_price">${:.2f}</p>
         </div>
     """.format(call_price), unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
-        <div class="bs_param_container">
-            <p class="strike_price_text">Put Option Value</p>
-            <p class="price_details">${:.2f}</p>
+        <div class="put_option_value">
+            <p class="put_option_text">Put Option Value</p>
+            <p class="put_option_price">${:.2f}</p>
         </div>
     """.format(put_price), unsafe_allow_html=True)
 
