@@ -60,6 +60,8 @@ with st.sidebar:
 with current_price_col:
     st.markdown('<p class="param_text">Current Price</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="param_value">${current_price:.2f}</p>', unsafe_allow_html=True)
+    with st.container():
+        st.markdown(f'<p class="current_price_text">Current Price<br></p><p class="price_details">${current_price:.2f}</p>', unsafe_allow_html = True)
 
 with strike_price_col:
     st.markdown('<p class="param_text">Strike Price</p>', unsafe_allow_html=True)
