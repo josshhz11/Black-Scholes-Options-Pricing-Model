@@ -40,11 +40,16 @@ div.block-container.css-z5fcl4.egzxvld4 {
     margin: 10px !important;
     text-align: center !important;
     color: white !important;
+    height: 100px; /* Set a fixed height for all boxes */
+    display: flex; /* Enable flexbox for vertical alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
 }
 
 .bs_param_container p {
     margin: 0 !important;
-    padding: 5px 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important; /* Ensure text fits neatly in two lines */
 }
 
 .price_details {
@@ -52,9 +57,8 @@ div.block-container.css-z5fcl4.egzxvld4 {
     font-family: 'Space Grotesk';
     color: #f6f6f6;
     font-weight: 900;
-    text-align: left;
-    line-height: 1;
-    padding-bottom: 10px;
+    text-align: center; /* Align the price details to the center */
+    line-height: 1 !important;
 }
 
 .current_price_text {
