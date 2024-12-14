@@ -59,7 +59,7 @@ with st.sidebar:
 # Display Parameter Values
 with current_price_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="current_price_text">Current Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
@@ -67,7 +67,7 @@ with current_price_col:
     
 with strike_price_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="strike_price_text">Strike Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
@@ -75,7 +75,7 @@ with strike_price_col:
 
 with ttm_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="time_to_maturity_text">Time to Maturity</p>
             <p class="price_details">{:.2f} yrs</p>
         </div>
@@ -83,7 +83,7 @@ with ttm_col:
 
 with rf_rate_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="rf_rate_text">Risk-Free Rate</p>
             <p class="price_details">{:.2%}</p>
         </div>
@@ -91,7 +91,7 @@ with rf_rate_col:
 
 with vol_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="vol_text">Volatility (σ)</p>
             <p class="price_details">{:.2%}</p>
         </div>
@@ -99,7 +99,7 @@ with vol_col:
 
 with purchase_price_col:
     st.markdown("""
-        <div class="param_container">
+        <div class="bs_param_container">
             <p class="purchase_price_text">Purchase Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
