@@ -4,11 +4,6 @@ html, body, [class*="css"] {
     font-family: 'Space Grotesk';
 }
 
-body {
-    background-color: black !important;
-    color: white !important; /* Optional: Sets the text color to white for readability */
-}
-
 /* Adjust the block container background and borders */
 div.block-container {
     background-color: black !important;
@@ -24,16 +19,6 @@ div.block-container.css-z5fcl4.egzxvld4 {
     padding-right: 5rem;
     padding-top: 15px;
     padding-bottom: 40px;
-}
-
-/* CONTAINER CSS */
-[data-testid="stVerticalBlock"] > [style*="flex-direction: column;"] > [data-testid="stVerticalBlock"] {
-    border: 1px groove #52546a;
-    border-radius: 10px;
-    padding-left: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: -6px 8px 20px 1px #00000052;
 }
 
 .bs_dashboard_title {
