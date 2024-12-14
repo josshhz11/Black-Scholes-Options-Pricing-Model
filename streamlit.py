@@ -39,7 +39,7 @@ with st.sidebar:
     linkedin_url = "https://www.linkedin.com/in/joshua-foo-tse-ern/"
     github_url = "https://github.com/josshhz11"
     st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`LinkedIn`</a>', unsafe_allow_html=True)
-    st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://www.flaticon.com/free-icon/github_2111432?term=github&page=1&position=4&origin=search&related_id=2111432" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Github`</a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://banner2.cleanpng.com/20180920/aey/kisspng-scalable-vector-graphics-github-computer-icons-log-github-brand-octacat-social-svg-png-icon-free-down-5ba35d7db54fe5.6273953815374329577427.jpg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Github`</a>', unsafe_allow_html=True)
 
     current_price = st.number_input("Current Asset Price", value=100.0)
     strike_price = st.number_input("Strike Price", value=100.0)
