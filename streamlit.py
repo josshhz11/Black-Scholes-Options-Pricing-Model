@@ -67,15 +67,15 @@ with strike_price_col:
 
 with ttm_col:
     with st.container():
-        st.markdown(f'<p class="time_to_maturity_text">Time to Maturity<br></p><p class="price_details">${time_to_maturity:.2f} yrs</p>', unsafe_allow_html = True)
+        st.markdown(f'<p class="time_to_maturity_text">Time to Maturity<br></p><p class="price_details">{time_to_maturity:.2f} yrs</p>', unsafe_allow_html = True)
 
 with rf_rate_col:
     with st.container():
-        st.markdown(f'<p class="rf_rate_text">Risk-Free Rate<br></p><p class="price_details">${risk_free_rate:.2%}</p>', unsafe_allow_html = True)
+        st.markdown(f'<p class="rf_rate_text">Risk-Free Rate<br></p><p class="price_details">{risk_free_rate:.2%}</p>', unsafe_allow_html = True)
 
 with vol_col:
     with st.container():
-        st.markdown(f'<p class="vol_text">Volatility (σ)<br></p><p class="price_details">${volatility:.2%}</p>', unsafe_allow_html = True)
+        st.markdown(f'<p class="vol_text">Volatility (σ)<br></p><p class="price_details">{volatility:.2%}</p>', unsafe_allow_html = True)
 
 with purchase_price_col:
     with st.container():

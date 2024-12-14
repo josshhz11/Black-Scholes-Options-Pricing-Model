@@ -13,6 +13,7 @@ body {
 div.block-container {
     background-color: black !important;
     border: none !important;
+    color: white;
 }
 
 div.block-container.css-z5fcl4.egzxvld4 {
