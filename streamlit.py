@@ -160,7 +160,7 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     fig_call, ax_call = plt.subplots(figsize=(10, 8))
     sns.heatmap(call_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2),
                 annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_call)
-    ax_call.set_title('CALL PRICE')
+    ax_call.set_title('Call Option Price')
     ax_call.set_xlabel('Spot Price')
     ax_call.set_ylabel('Volatility')
     
@@ -168,7 +168,7 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     fig_put, ax_put = plt.subplots(figsize=(10, 8))
     sns.heatmap(put_prices, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2),
                 annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_put)
-    ax_put.set_title('PUT PRICE')
+    ax_put.set_title('Put Option Price')
     ax_put.set_xlabel('Spot Price')
     ax_put.set_ylabel('Volatility')
     
@@ -176,7 +176,7 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     fig_call_pnl, ax_call_pnl = plt.subplots(figsize=(10, 8))
     sns.heatmap(call_pnl, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2),
                 annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_call_pnl)
-    ax_call_pnl.set_title('CALL P&L')
+    ax_call_pnl.set_title('Call Option P&L')
     ax_call_pnl.set_xlabel('Spot Price')
     ax_call_pnl.set_ylabel('Volatility')
     
@@ -184,7 +184,7 @@ def plot_heatmap_with_pnl(bs_model, spot_range, vol_range, strike_price, purchas
     fig_put_pnl, ax_put_pnl = plt.subplots(figsize=(10, 8))
     sns.heatmap(put_pnl, xticklabels=np.round(spot_range, 2), yticklabels=np.round(vol_range, 2),
                 annot=True, fmt=".2f", cmap="RdYlGn", ax=ax_put_pnl)
-    ax_put_pnl.set_title('PUT P&L')
+    ax_put_pnl.set_title('Put Option P&L')
     ax_put_pnl.set_xlabel('Spot Price')
     ax_put_pnl.set_ylabel('Volatility')
     

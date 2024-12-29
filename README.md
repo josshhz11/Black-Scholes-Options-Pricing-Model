@@ -71,4 +71,6 @@ $$
 where S is the current stock price and K is the exercise price.
 
 ## How is the P&L functionality calculated?
-TODO
+To calculate the P&L of each option price (call/put), we take in an additional input of the purchase price of the option.
+
+To get the P&L, we take the value of each option minus the purchase price of the option, to get the profit or loss of each option and plot it on a heatmap, with negative values being in the red and positive values in the green. 
