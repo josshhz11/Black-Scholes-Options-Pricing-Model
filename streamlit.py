@@ -7,7 +7,6 @@ from math import exp, sqrt, log
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#######################
 # Page configuration
 st.set_page_config(
     page_title="Black-Scholes Options Pricing Model",
@@ -30,7 +29,7 @@ with open('style.css') as f:
 
 # Main Page for Output Display
 st.markdown('<p class="bs_dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
-current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([1,1,1,1,1,1])
+current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([0.6,0.6,0.6,0.6,0.6,0.6])
 
 # Sidebar Inputs
 with st.sidebar:
