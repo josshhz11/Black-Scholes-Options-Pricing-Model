@@ -184,7 +184,7 @@ div.block-container.css-z5fcl4.egzxvld4 {
 
 .call_option_value p, .put_option_value p {
     margin: 0 !important;
-    padding: 10px 0 !important; /* Padding between lines */
+    padding: 5px 0 !important; /* Padding between lines */
 }
 
 .call_option_text, .put_option_text {
