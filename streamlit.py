@@ -62,8 +62,6 @@ with col_3:
     volatility = st.number_input("Volatility (σ)", value=0.2)
     purchase_price = st.number_input("Purchase Price of Option", value=10.0)
 
-st.markdown("---")
-calculate_btn = st.button('Heatmap Parameters')
 col_4, col_5 = st.columns([1,1])
 
 with col_4:
