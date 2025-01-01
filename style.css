@@ -4,16 +4,6 @@ html, body, [class*="css"] {
     font-family: 'Space Grotesk';
 }
 
-/* Sidebar Title */
-.sidebar_title {
-    font-size: 22px;
-    font-weight: bold;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #f7931a; /* Orange for emphasis */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 /* Section Headings */
 .params_text {
     font-size: 18px;
@@ -21,34 +11,6 @@ html, body, [class*="css"] {
     font-weight: bold;
     color: #ffffff; /* White text */
     margin-bottom: 10px;
-}
-
-/* Divider Styling */
-.sidebar_divider {
-    border: none;
-    height: 2px;
-    background: #52546a; /* Gray color for dividers */
-    margin: 10px 0;
-}
-
-/* Form Inputs */
-.stNumberInput input {
-    background-color: #1a1a1a; /* Dark background */
-    color: white; /* White text */
-    border: 1px solid #52546a; /* Border for inputs */
-    border-radius: 5px; /* Rounded edges */
-}
-
-/* Buttons */
-button {
-    background-color: #f7931a; /* Orange for buttons */
-    color: white;
-    font-size: 16px;
-    font-family: 'Space Grotesk', sans-serif;
-    padding: 8px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
 }
 
 /* Adjust the block container background and borders */
