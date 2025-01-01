@@ -107,9 +107,7 @@ with purchase_price_col:
 
 st.markdown("""
 <style>
-    .stNumberInput {
-        color: #ffffff;
-    }
+    .stNumberInput {color: #ffffff}
 </style>
 """, unsafe_allow_html=True)
 
