@@ -26,20 +26,32 @@ st.markdown(
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
-
 # Main Page for Output Display
-st.markdown('<p class="bs_dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
+title_col, info_col = st.columns([3,1])
+with title_col:
+    st.markdown('<p class="bs_dashboard_title">Black-Scholes Options Pricing Model</p>', unsafe_allow_html = True)
+with info_col:
+    st.write('By Joshua Foo')
+    st.markdown("""
+        <div>
+            <p>
+                <a href="mailto:joshua.foo.tse.ern@gmail.com" target="blank">
+                    <img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1024px-Gmail_icon_%282020%29.svg.png?20221017173631" alt="gmail" height="30" width="40" style="margin-right: 10px;" />
+                </a>
+                <a href="https://www.linkedin.com/in/joshua-foo-tse-ern/" target="blank">
+                    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="30" width="40" style="margin-right: 10px;" />
+                </a>
+                <a href="https://github.com/josshhz11" target="blank">
+                    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="github" height="30" width="40" style="margin-right: 10px;" />
+                </a>
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
+
 current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([0.6,0.6,0.6,0.6,0.6,0.6])
 
 # Sidebar Inputs
 with st.sidebar:
-    st.title("📈 Black-Scholes Options Pricing Model")
-    st.write("`Created by: Joshua Foo Tse Ern`")
-    linkedin_url = "https://www.linkedin.com/in/joshua-foo-tse-ern/"
-    github_url = "https://github.com/josshhz11"
-    st.markdown(f'<a href="{linkedin_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`LinkedIn`</a>', unsafe_allow_html=True)
-    st.markdown(f'<a href="{github_url}" target="_blank" style="text-decoration: none; color: inherit;"><img src="https://banner2.cleanpng.com/20180920/aey/kisspng-scalable-vector-graphics-github-computer-icons-log-github-brand-octacat-social-svg-png-icon-free-down-5ba35d7db54fe5.6273953815374329577427.jpg" width="25" height="25" style="vertical-align: middle; margin-right: 10px;">`Github`</a>', unsafe_allow_html=True)
-
     current_price = st.number_input("Current Asset Price", value=100.0)
     strike_price = st.number_input("Strike Price", value=100.0)
     time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
