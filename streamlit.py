@@ -50,27 +50,9 @@ with info_col:
 
 current_price_col, strike_price_col, ttm_col, rf_rate_col, vol_col, purchase_price_col = st.columns([0.6,0.6,0.6,0.6,0.6,0.6])
 
-# Sidebar Inputs
-with st.sidebar:
-    current_price = st.number_input("Current Asset Price", value=100.0)
-    strike_price = st.number_input("Strike Price", value=100.0)
-    time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
-    risk_free_rate = st.number_input("Risk-Free Rate", value=0.05)
-    volatility = st.number_input("Volatility (σ)", value=0.2)
-    purchase_price = st.number_input("Purchase Price of Option", value=10.0)
-
-    st.markdown("---")
-    calculate_btn = st.button('Heatmap Parameters')
-    spot_min = st.number_input('Min Spot Price', min_value=0.01, value=current_price*0.8, step=0.01)
-    spot_max = st.number_input('Max Spot Price', min_value=0.01, value=current_price*1.2, step=0.01)
-    vol_min = st.slider('Min Volatility for Heatmap', min_value=0.01, max_value=1.0, value=volatility*0.5, step=0.01)
-    vol_max = st.slider('Max Volatility for Heatmap', min_value=0.01, max_value=1.0, value=volatility*1.5, step=0.01)
-    
-    spot_range = np.linspace(spot_min, spot_max, 10)
-    vol_range = np.linspace(vol_min, vol_max, 10)
-
 # Display Parameter Values
 with current_price_col:
+    current_price = st.number_input("Current Asset Price", value=100.0)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base current_price_colour">Current Price</p>
@@ -79,6 +61,7 @@ with current_price_col:
     """.format(current_price), unsafe_allow_html=True)
     
 with strike_price_col:
+    strike_price = st.number_input("Strike Price", value=100.0)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base strike_price_colour">Strike Price</p>
@@ -87,6 +70,7 @@ with strike_price_col:
     """.format(strike_price), unsafe_allow_html=True)
 
 with ttm_col:
+    time_to_maturity = st.number_input("Time to Maturity (Years)", value=1.0)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base time_to_maturity_colour">Time to Maturity</p>
@@ -95,6 +79,7 @@ with ttm_col:
     """.format(time_to_maturity), unsafe_allow_html=True)
 
 with rf_rate_col:
+    risk_free_rate = st.number_input("Risk-Free Rate", value=0.05)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base rf_rate_colour">Risk-Free Rate</p>
@@ -103,6 +88,7 @@ with rf_rate_col:
     """.format(risk_free_rate), unsafe_allow_html=True)
 
 with vol_col:
+    volatility = st.number_input("Volatility (σ)", value=0.2)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base vol_colour">Volatility (σ)</p>
@@ -111,12 +97,22 @@ with vol_col:
     """.format(volatility), unsafe_allow_html=True)
 
 with purchase_price_col:
+    purchase_price = st.number_input("Purchase Price of Option", value=10.0)
     st.markdown("""
         <div class="bs_param_container">
             <p class="text_base purchase_price_colour">Purchase Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
     """.format(purchase_price), unsafe_allow_html=True)
+
+calculate_btn = st.button('Heatmap Parameters')
+spot_min = st.number_input('Min Spot Price', min_value=0.01, value=current_price*0.8, step=0.01)
+spot_max = st.number_input('Max Spot Price', min_value=0.01, value=current_price*1.2, step=0.01)
+vol_min = st.slider('Min Volatility for Heatmap', min_value=0.01, max_value=1.0, value=volatility*0.5, step=0.01)
+vol_max = st.slider('Max Volatility for Heatmap', min_value=0.01, max_value=1.0, value=volatility*1.5, step=0.01)
+
+spot_range = np.linspace(spot_min, spot_max, 10)
+vol_range = np.linspace(vol_min, vol_max, 10)
 
 class BlackScholes:
     def __init__(self, current_price, strike_price, time_to_maturity, risk_free_rate, volatility):
