@@ -150,25 +150,25 @@ div.block-container.css-z5fcl4.egzxvld4 {
     margin: 15px !important; /* Space around the container */
     text-align: center !important;
     color: white !important;
-    font-size: 20px; /* Larger font size for the text */
+    font-size: 24px !important;
     font-family: 'Space Grotesk';
     font-weight: bold;
 }
 
 .call_option_value p, .put_option_value p {
     margin: 0 !important;
-    padding: 5px 0 !important; /* Padding between lines */
+    padding: 5px !important; /* Padding between lines */
 }
 
-.call_option_text, .put_option_text {
+.call_put_option_text {
     font-size: 18px;
     font-family: 'Space Grotesk';
     color: #a1a1a1;
     font-weight: bold;
 }
 
-.call_option_price, .put_option_price {
-    font-size: 60px; /* Larger font for the price */
+.call_put_option_price {
+    font-size: 30px !important;
     font-family: 'Space Grotesk';
     color: #f6f6f6;
     font-weight: 900;

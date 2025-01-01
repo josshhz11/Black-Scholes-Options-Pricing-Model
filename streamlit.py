@@ -194,21 +194,21 @@ bs_model = BlackScholes(current_price, strike_price, time_to_maturity, risk_free
 call_price, put_price = bs_model.calculate_prices()
 
 # Display Call and Put Values in colored tables
-col1, col2 = st.columns([1,1], gap="small")
+col1, col2 = st.columns([0.6,0.6], gap="small")
 
 with col1:
     st.markdown("""
         <div class="call_option_value">
-            <p class="call_option_text">Call Option Value</p>
-            <p class="call_option_price">${:.2f}</p>
+            <p class="call_put_option_text">Call Option Value</p>
+            <p class="call_put_option_price">${:.2f}</p>
         </div>
     """.format(call_price), unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
         <div class="put_option_value">
-            <p class="put_option_text">Put Option Value</p>
-            <p class="put_option_price">${:.2f}</p>
+            <p class="call_put_option_text">Put Option Value</p>
+            <p class="call_put_option_price">${:.2f}</p>
         </div>
     """.format(put_price), unsafe_allow_html=True)
 
