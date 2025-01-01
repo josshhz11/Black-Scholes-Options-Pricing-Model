@@ -20,7 +20,7 @@ st.markdown(
     <style>
         footer {display: none}
         [data-testid="stHeader"] {display: none}
-        .stNumberInput {color: #ffffff}
+        .stNumberInput label {color: #ffffff}
     </style>
     """, unsafe_allow_html = True
 )
