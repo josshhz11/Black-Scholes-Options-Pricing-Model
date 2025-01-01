@@ -20,6 +20,7 @@ st.markdown(
     <style>
         footer {display: none}
         [data-testid="stHeader"] {display: none}
+        .stNumberInput {color: #ffffff}
     </style>
     """, unsafe_allow_html = True
 )
@@ -104,12 +105,6 @@ with purchase_price_col:
             <p class="price_details">${:.2f}</p>
         </div>
     """.format(purchase_price), unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-    .stNumberInput {color: #ffffff}
-</style>
-""", unsafe_allow_html=True)
 
 calculate_btn = st.button('Heatmap Parameters')
 spot_min = st.number_input('Min Spot Price', min_value=0.01, value=current_price*0.8, step=0.01)
