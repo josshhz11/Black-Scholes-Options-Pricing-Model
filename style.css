@@ -13,6 +13,14 @@ html, body, [class*="css"] {
     margin-bottom: 10px;
 }
 
+/* Form Inputs */
+.stNumberInput input {
+    background-color: #1a1a1a; /* Dark background */
+    color: white; /* White text */
+    border: 1px solid #52546a; /* Border for inputs */
+    border-radius: 5px; /* Rounded edges */
+}
+
 /* Adjust the block container background and borders */
 div.block-container {
     background-color: black !important;
