@@ -118,27 +118,27 @@ div.block-container.css-z5fcl4.egzxvld4 {
 }
 
 .current_price_colour {
-    color: #f7931a;
+    color: #f7931a !important;
 }
 
 .strike_price_colour {
-    color: #a1a1a1;
+    color: #a1a1a1 !important;
 }
 
 .time_to_maturity_colour {
-    color: #ff6b08;
+    color: #ff6b08 !important;
 }
 
 .rf_rate_colour {
-    color: #807af4;
+    color: #807af4 !important;
 }
 
 .vol_colour {
-    color: #01acf1;
+    color: #01acf1 !important;
 }
 
 .purchase_price_colour {
-    color: #32CD32; 
+    color: #32CD32 !important; 
 }
 
 .call_option_value, .put_option_value {
