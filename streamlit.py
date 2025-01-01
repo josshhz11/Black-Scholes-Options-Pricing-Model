@@ -21,6 +21,7 @@ st.markdown(
         footer {display: none}
         [data-testid="stHeader"] {display: none}
         .stNumberInput label {color: #ffffff}
+        .stSlider label {color: #ffffff}
     </style>
     """, unsafe_allow_html = True
 )
