@@ -107,7 +107,6 @@ with purchase_price_col:
         </div>
     """.format(purchase_price), unsafe_allow_html=True)
 
-calculate_btn = st.button('Heatmap Parameters')
 spot_min = st.number_input('Min Spot Price', min_value=0.01, value=current_price*0.8, step=0.01)
 spot_max = st.number_input('Max Spot Price', min_value=0.01, value=current_price*1.2, step=0.01)
 vol_min = st.slider('Min Volatility for Heatmap', min_value=0.01, max_value=1.0, value=volatility*0.5, step=0.01)
