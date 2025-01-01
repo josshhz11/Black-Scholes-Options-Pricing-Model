@@ -50,7 +50,7 @@ with info_col:
         </div>
     """, unsafe_allow_html=True)
 
-col_1, col_2, col_3 = st.columns([1,1,1])
+col_1, col_2, col_3, col_4, col_5 = st.columns([0.6,0.6,0.6,0.6,0.6])
 
 with col_1:
     current_price = st.number_input("Current Asset Price", value=100.0)
@@ -61,9 +61,6 @@ with col_2:
 with col_3:
     volatility = st.number_input("Volatility (σ)", value=0.2)
     purchase_price = st.number_input("Purchase Price of Option", value=10.0)
-
-col_4, col_5 = st.columns([1,1])
-
 with col_4:
     spot_min = st.number_input('Min Spot Price', min_value=0.01, value=current_price*0.8, step=0.01)
     spot_max = st.number_input('Max Spot Price', min_value=0.01, value=current_price*1.2, step=0.01)
