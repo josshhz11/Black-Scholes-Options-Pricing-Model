@@ -61,7 +61,7 @@ with st.sidebar:
 with current_price_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="current_price_text">Current Price</p>
+            <p class="text_base current_price_colour">Current Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
     """.format(current_price), unsafe_allow_html=True)
@@ -69,7 +69,7 @@ with current_price_col:
 with strike_price_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="strike_price_text">Strike Price</p>
+            <p class="text_base strike_price_colour">Strike Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
     """.format(strike_price), unsafe_allow_html=True)
@@ -77,7 +77,7 @@ with strike_price_col:
 with ttm_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="time_to_maturity_text">Time to Maturity</p>
+            <p class="text_base time_to_maturity_colour">Time to Maturity</p>
             <p class="price_details">{:.2f} yrs</p>
         </div>
     """.format(time_to_maturity), unsafe_allow_html=True)
@@ -85,7 +85,7 @@ with ttm_col:
 with rf_rate_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="rf_rate_text">Risk-Free Rate</p>
+            <p class="text_base rf_rate_colour">Risk-Free Rate</p>
             <p class="price_details">{:.2%}</p>
         </div>
     """.format(risk_free_rate), unsafe_allow_html=True)
@@ -93,7 +93,7 @@ with rf_rate_col:
 with vol_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="vol_text">Volatility (σ)</p>
+            <p class="text_base vol_colour">Volatility (σ)</p>
             <p class="price_details">{:.2%}</p>
         </div>
     """.format(volatility), unsafe_allow_html=True)
@@ -101,7 +101,7 @@ with vol_col:
 with purchase_price_col:
     st.markdown("""
         <div class="bs_param_container">
-            <p class="purchase_price_text">Purchase Price</p>
+            <p class="text_base purchase_price_colour">Purchase Price</p>
             <p class="price_details">${:.2f}</p>
         </div>
     """.format(purchase_price), unsafe_allow_html=True)

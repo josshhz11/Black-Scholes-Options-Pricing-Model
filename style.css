@@ -108,64 +108,37 @@ div.block-container.css-z5fcl4.egzxvld4 {
     line-height: 1 !important;
 }
 
-.current_price_text {
-    font-size: 14px; 
+.text_base {
+    font-size: 16px !important; 
     font-family: 'Space Grotesk';
+    font-weight: bold;
+    text-align: center;
+    line-height: 0.2;
+    padding-top: 10px;
+}
+
+.current_price_colour {
     color: #f7931a;
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
 }
 
-.strike_price_text {
-    font-size: 14px; 
-    font-family: 'Space Grotesk';
+.strike_price_colour {
     color: #a1a1a1;
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
 }
 
-.time_to_maturity_text {
-    font-size: 14px; 
-    font-family: 'Space Grotesk';
+.time_to_maturity_colour {
     color: #ff6b08;
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
 }
 
-.rf_rate_text {
-    font-size: 14px; 
-    font-family: 'Space Grotesk';
+.rf_rate_colour {
     color: #807af4;
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
 }
 
-.vol_text {
-    font-size: 14px; 
-    font-family: 'Space Grotesk';
+.vol_colour {
     color: #01acf1;
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
 }
 
-.purchase_price_text {
-    font-size: 14px; 
-    font-family: 'Space Grotesk';
-    color: #32CD32; /* Lime Green for differentiation */
-    font-weight: bold;
-    text-align: left;
-    line-height: 0.2;
-    padding-top: 10px;
+.purchase_price_colour {
+    color: #32CD32; 
 }
 
 .call_option_value, .put_option_value {
